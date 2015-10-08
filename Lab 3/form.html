@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+        <script type="text/javascript">
+           window.onload = function() {
+                document.getElementById("form").addEventListener('submit', function() {
+                     if (!isNaN(document.getElementById("name").value)) {
+                        alert("Name cannot be a number");
+                     }
+                     else {
+                         alert("Registered " + document.getElementById("name").value +
+                            " Aged " + document.getElementById("age").value + "."
+                         );
+                     }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <form id="form">
+            <input id="name" type="text" name="firstname" placeholder="Name" required/><br/>
+            <br/>
+            <select id="age" required>
+                <option value="" hidden>Age</option>
+                <option value="0-17">0-17</option>
+                <option value="18-29">18-29</option>
+                <option value="30-44">30-44</option>
+                <option value="45-59">45-59</option>
+                <option value="60+">60+</option>
+            </select><br/>
+            <br/>
+            <fieldset>
+                <legend>Gender</legend>
+                <input id="gender_male" type="radio" name="gender" value="male" required/><label for="gender_male">Male</label><br/>
+                <input id="gender_female" type="radio" name="gender" value="female"/><label for="gender_female">Female</label><br/>
+                <input id="gender_both" type="radio" name="gender" value="both"/><label for="gender_both">Both</label><br/>
+                <input id="gender_neither" type="radio" name="gender" value="neither"/><label for="gender_neither">Neither</label><br/>
+                <input id="gender_other" type="radio" name="gender" value="other"/><label for="gender_other">Other</label><br/>
+            </fieldset><br/>
+            <input id="terms" type="checkbox" name="terms" value="yes" required/><label for="terms"> I agree that I have checked this box</label><br/>
+            <br/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
